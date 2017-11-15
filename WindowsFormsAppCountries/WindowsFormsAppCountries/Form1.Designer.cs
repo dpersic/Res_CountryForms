@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewCountries = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxRegion = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -36,12 +42,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -67,6 +67,42 @@
             this.dataGridViewCountries.Name = "dataGridViewCountries";
             this.dataGridViewCountries.Size = new System.Drawing.Size(644, 306);
             this.dataGridViewCountries.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "sCode";
+            this.Column1.HeaderText = "Kod";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "sName";
+            this.Column2.HeaderText = "Naziv";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "sCapital";
+            this.Column3.HeaderText = "Glavni grad";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "nPopulation";
+            this.Column4.HeaderText = "Broj stanovnika";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "sRegion";
+            this.Column5.HeaderText = "Kontinent";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "fArea";
+            this.Column6.HeaderText = "Površina";
+            this.Column6.Name = "Column6";
             // 
             // comboBoxRegion
             // 
@@ -108,17 +144,19 @@
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(21, 157);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(172, 20);
             this.textBoxSearch.TabIndex = 5;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(21, 183);
+            this.btnSearch.Location = new System.Drawing.Point(18, 203);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(120, 30);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Pretraži";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label3
             // 
@@ -128,42 +166,6 @@
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Pretraži";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "sCode";
-            this.Column1.HeaderText = "Kod";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "sName";
-            this.Column2.HeaderText = "Naziv";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "sCapital";
-            this.Column3.HeaderText = "Glavni grad";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "nPopulation";
-            this.Column4.HeaderText = "Broj stanovnika";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "sRegion";
-            this.Column5.HeaderText = "Kontinent";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "fArea";
-            this.Column6.HeaderText = "Površina";
-            this.Column6.Name = "Column6";
             // 
             // tabControl1
             // 

@@ -16,6 +16,7 @@ namespace WindowsFormsAppCountries
 {
     public partial class Form1 : Form
     {
+        
         public List<Country> lCountries; // dodati na classu, public
         public Form1()
         {
@@ -146,6 +147,21 @@ namespace WindowsFormsAppCountries
                     break;
 
             }
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string sPretrazi = textBoxSearch.Text;
+            var vPretrazi = from c in lCountries where c.sName.Contains(sPretrazi) select c;
+            List<Country> lPretrazeneDrzave = vPretrazi.ToList();
+            dataGridViewCountries.DataSource = lPretrazeneDrzave.OrderBy(o => o.sName).ToList();
+
         }
     }
 }
