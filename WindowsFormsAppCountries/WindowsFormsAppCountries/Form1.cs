@@ -41,7 +41,12 @@ namespace WindowsFormsAppCountries
             };
             comboBox1.DataSource = lSortCriterias;
 
-           // string sUrl = System.Configuration.ConfigurationManager.AppSettings["RestApiUrl"]; // provjra, jel link radi
+            /*COMBO BOX NOVA REGIJA*/
+            List<string> lNewRegionOptions = lCountries.Where(o => o.sRegion != "").Select(o => o.sRegion).Distinct().ToList();
+            lNewRegionOptions.Insert(0, " - ");
+            comboBoxRegion.DataSource = lNewRegionOptions;
+
+            // string sUrl = System.Configuration.ConfigurationManager.AppSettings["RestApiUrl"]; // provjra, jel link radi
             //  Debug.WriteLine(sUrl);
             // Trace.WriteLine(sUrl);           
         }
@@ -162,6 +167,27 @@ namespace WindowsFormsAppCountries
             List<Country> lPretrazeneDrzave = vPretrazi.ToList();
             dataGridViewCountries.DataSource = lPretrazeneDrzave.OrderBy(o => o.sName).ToList();
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string NewCode = inptCode.Text;
+            string NewName = inptName.Text;
+            string NewCapital=inptCapitalCity.Text;
+            int NewPopulation = Convert.ToInt32(inptNumbPopulation.Text);
+            float NewArea = Convert.ToSingle(inptArea.Text);
+            string NewRegion = ChooseContinent.Text;
+            Country zemljica = new Country()
+            {
+                sCode = NewCode,
+                sName = NewName,
+                sCapital = NewCapital,
+                nPopulation = NewPopulation,
+                fArea = NewArea,
+                sRegion = NewRegion
+            };
+            lCountries.Add(zemljica);
+            dataGridViewCountries.DataSource = lCountries;
         }
     }
 }
