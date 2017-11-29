@@ -44,7 +44,7 @@ namespace WindowsFormsAppCountries
             /*COMBO BOX NOVA REGIJA*/
             List<string> lNewRegionOptions = lCountries.Where(o => o.sRegion != "").Select(o => o.sRegion).Distinct().ToList();
             lNewRegionOptions.Insert(0, " - ");
-            comboBoxRegion.DataSource = lNewRegionOptions;
+            comboBoxChoose.DataSource = lNewRegionOptions;
 
             // string sUrl = System.Configuration.ConfigurationManager.AppSettings["RestApiUrl"]; // provjra, jel link radi
             //  Debug.WriteLine(sUrl);
@@ -169,15 +169,15 @@ namespace WindowsFormsAppCountries
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) 
         {
             string NewCode = inptCode.Text;
             string NewName = inptName.Text;
             string NewCapital=inptCapitalCity.Text;
             int NewPopulation = Convert.ToInt32(inptNumbPopulation.Text);
             float NewArea = Convert.ToSingle(inptArea.Text);
-            string NewRegion = ChooseContinent.Text;
-            Country zemljica = new Country()
+            string NewRegion = comboBoxChoose.Text;
+            Country Zemlja = new Country()
             {
                 sCode = NewCode,
                 sName = NewName,
@@ -186,8 +186,13 @@ namespace WindowsFormsAppCountries
                 fArea = NewArea,
                 sRegion = NewRegion
             };
-            lCountries.Add(zemljica);
+            lCountries.Add(Zemlja);
             dataGridViewCountries.DataSource = lCountries;
+        }
+
+        private void comboBoxChoose_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

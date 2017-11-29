@@ -45,21 +45,21 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.inptCode = new System.Windows.Forms.TextBox();
+            this.inptArea = new System.Windows.Forms.TextBox();
+            this.inptCapitalCity = new System.Windows.Forms.TextBox();
+            this.inptNumbPopulation = new System.Windows.Forms.TextBox();
+            this.inptName = new System.Windows.Forms.TextBox();
+            this.lblinptContinent = new System.Windows.Forms.Label();
+            this.lblinptArea = new System.Windows.Forms.Label();
+            this.lblinptCapitalCity = new System.Windows.Forms.Label();
+            this.lblinptNumbPop = new System.Windows.Forms.Label();
+            this.lblinptName = new System.Windows.Forms.Label();
+            this.lblinptCode = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.lblinptCode = new System.Windows.Forms.Label();
-            this.lblinptName = new System.Windows.Forms.Label();
-            this.lblinptNumbPop = new System.Windows.Forms.Label();
-            this.lblinptCapitalCity = new System.Windows.Forms.Label();
-            this.lblinptArea = new System.Windows.Forms.Label();
-            this.lblinptContinent = new System.Windows.Forms.Label();
-            this.inptName = new System.Windows.Forms.TextBox();
-            this.inptNumbPopulation = new System.Windows.Forms.TextBox();
-            this.inptCapitalCity = new System.Windows.Forms.TextBox();
-            this.inptArea = new System.Windows.Forms.TextBox();
-            this.ChooseContinent = new System.Windows.Forms.TextBox();
-            this.inptCode = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.comboBoxChoose = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCountries)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -212,9 +212,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.comboBoxChoose);
             this.tabPage2.Controls.Add(this.btnSave);
             this.tabPage2.Controls.Add(this.inptCode);
-            this.tabPage2.Controls.Add(this.ChooseContinent);
             this.tabPage2.Controls.Add(this.inptArea);
             this.tabPage2.Controls.Add(this.inptCapitalCity);
             this.tabPage2.Controls.Add(this.inptNumbPopulation);
@@ -232,6 +232,105 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Unos";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(72, 201);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(120, 30);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Spremi";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // inptCode
+            // 
+            this.inptCode.Location = new System.Drawing.Point(86, 18);
+            this.inptCode.Name = "inptCode";
+            this.inptCode.Size = new System.Drawing.Size(166, 20);
+            this.inptCode.TabIndex = 11;
+            // 
+            // inptArea
+            // 
+            this.inptArea.Location = new System.Drawing.Point(101, 123);
+            this.inptArea.Name = "inptArea";
+            this.inptArea.Size = new System.Drawing.Size(151, 20);
+            this.inptArea.TabIndex = 9;
+            // 
+            // inptCapitalCity
+            // 
+            this.inptCapitalCity.Location = new System.Drawing.Point(113, 97);
+            this.inptCapitalCity.Name = "inptCapitalCity";
+            this.inptCapitalCity.Size = new System.Drawing.Size(139, 20);
+            this.inptCapitalCity.TabIndex = 8;
+            // 
+            // inptNumbPopulation
+            // 
+            this.inptNumbPopulation.Location = new System.Drawing.Point(130, 71);
+            this.inptNumbPopulation.Name = "inptNumbPopulation";
+            this.inptNumbPopulation.Size = new System.Drawing.Size(122, 20);
+            this.inptNumbPopulation.TabIndex = 7;
+            // 
+            // inptName
+            // 
+            this.inptName.Location = new System.Drawing.Point(86, 44);
+            this.inptName.Name = "inptName";
+            this.inptName.Size = new System.Drawing.Size(166, 20);
+            this.inptName.TabIndex = 6;
+            // 
+            // lblinptContinent
+            // 
+            this.lblinptContinent.AutoSize = true;
+            this.lblinptContinent.Location = new System.Drawing.Point(6, 154);
+            this.lblinptContinent.Name = "lblinptContinent";
+            this.lblinptContinent.Size = new System.Drawing.Size(103, 13);
+            this.lblinptContinent.TabIndex = 5;
+            this.lblinptContinent.Text = "Odaberite kontinent:";
+            // 
+            // lblinptArea
+            // 
+            this.lblinptArea.AutoSize = true;
+            this.lblinptArea.Location = new System.Drawing.Point(6, 126);
+            this.lblinptArea.Name = "lblinptArea";
+            this.lblinptArea.Size = new System.Drawing.Size(89, 13);
+            this.lblinptArea.TabIndex = 4;
+            this.lblinptArea.Text = "Unesite površinu:";
+            // 
+            // lblinptCapitalCity
+            // 
+            this.lblinptCapitalCity.AutoSize = true;
+            this.lblinptCapitalCity.Location = new System.Drawing.Point(6, 102);
+            this.lblinptCapitalCity.Name = "lblinptCapitalCity";
+            this.lblinptCapitalCity.Size = new System.Drawing.Size(101, 13);
+            this.lblinptCapitalCity.TabIndex = 3;
+            this.lblinptCapitalCity.Text = "Unesite glavni grad:";
+            // 
+            // lblinptNumbPop
+            // 
+            this.lblinptNumbPop.AutoSize = true;
+            this.lblinptNumbPop.Location = new System.Drawing.Point(6, 74);
+            this.lblinptNumbPop.Name = "lblinptNumbPop";
+            this.lblinptNumbPop.Size = new System.Drawing.Size(121, 13);
+            this.lblinptNumbPop.TabIndex = 2;
+            this.lblinptNumbPop.Text = "Unesite broj stanovnika:";
+            // 
+            // lblinptName
+            // 
+            this.lblinptName.AutoSize = true;
+            this.lblinptName.Location = new System.Drawing.Point(6, 47);
+            this.lblinptName.Name = "lblinptName";
+            this.lblinptName.Size = new System.Drawing.Size(74, 13);
+            this.lblinptName.TabIndex = 1;
+            this.lblinptName.Text = "Unesite naziv:";
+            // 
+            // lblinptCode
+            // 
+            this.lblinptCode.AutoSize = true;
+            this.lblinptCode.Location = new System.Drawing.Point(6, 21);
+            this.lblinptCode.Name = "lblinptCode";
+            this.lblinptCode.Size = new System.Drawing.Size(67, 13);
+            this.lblinptCode.TabIndex = 0;
+            this.lblinptCode.Text = "Unesite kod:";
             // 
             // tabPage3
             // 
@@ -253,111 +352,14 @@
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("https://www.openstreetmap.org", System.UriKind.Absolute);
             // 
-            // lblinptCode
+            // comboBoxChoose
             // 
-            this.lblinptCode.AutoSize = true;
-            this.lblinptCode.Location = new System.Drawing.Point(6, 21);
-            this.lblinptCode.Name = "lblinptCode";
-            this.lblinptCode.Size = new System.Drawing.Size(67, 13);
-            this.lblinptCode.TabIndex = 0;
-            this.lblinptCode.Text = "Unesite kod:";
-            // 
-            // lblinptName
-            // 
-            this.lblinptName.AutoSize = true;
-            this.lblinptName.Location = new System.Drawing.Point(6, 47);
-            this.lblinptName.Name = "lblinptName";
-            this.lblinptName.Size = new System.Drawing.Size(74, 13);
-            this.lblinptName.TabIndex = 1;
-            this.lblinptName.Text = "Unesite naziv:";
-            // 
-            // lblinptNumbPop
-            // 
-            this.lblinptNumbPop.AutoSize = true;
-            this.lblinptNumbPop.Location = new System.Drawing.Point(6, 74);
-            this.lblinptNumbPop.Name = "lblinptNumbPop";
-            this.lblinptNumbPop.Size = new System.Drawing.Size(121, 13);
-            this.lblinptNumbPop.TabIndex = 2;
-            this.lblinptNumbPop.Text = "Unesite broj stanovnika:";
-            // 
-            // lblinptCapitalCity
-            // 
-            this.lblinptCapitalCity.AutoSize = true;
-            this.lblinptCapitalCity.Location = new System.Drawing.Point(6, 102);
-            this.lblinptCapitalCity.Name = "lblinptCapitalCity";
-            this.lblinptCapitalCity.Size = new System.Drawing.Size(101, 13);
-            this.lblinptCapitalCity.TabIndex = 3;
-            this.lblinptCapitalCity.Text = "Unesite glavni grad:";
-            // 
-            // lblinptArea
-            // 
-            this.lblinptArea.AutoSize = true;
-            this.lblinptArea.Location = new System.Drawing.Point(6, 126);
-            this.lblinptArea.Name = "lblinptArea";
-            this.lblinptArea.Size = new System.Drawing.Size(89, 13);
-            this.lblinptArea.TabIndex = 4;
-            this.lblinptArea.Text = "Unesite površinu:";
-            // 
-            // lblinptContinent
-            // 
-            this.lblinptContinent.AutoSize = true;
-            this.lblinptContinent.Location = new System.Drawing.Point(6, 154);
-            this.lblinptContinent.Name = "lblinptContinent";
-            this.lblinptContinent.Size = new System.Drawing.Size(103, 13);
-            this.lblinptContinent.TabIndex = 5;
-            this.lblinptContinent.Text = "Odaberite kontinent:";
-            // 
-            // inptName
-            // 
-            this.inptName.Location = new System.Drawing.Point(86, 44);
-            this.inptName.Name = "inptName";
-            this.inptName.Size = new System.Drawing.Size(154, 20);
-            this.inptName.TabIndex = 6;
-            // 
-            // inptNumbPopulation
-            // 
-            this.inptNumbPopulation.Location = new System.Drawing.Point(130, 71);
-            this.inptNumbPopulation.Name = "inptNumbPopulation";
-            this.inptNumbPopulation.Size = new System.Drawing.Size(110, 20);
-            this.inptNumbPopulation.TabIndex = 7;
-            // 
-            // inptCapitalCity
-            // 
-            this.inptCapitalCity.Location = new System.Drawing.Point(113, 97);
-            this.inptCapitalCity.Name = "inptCapitalCity";
-            this.inptCapitalCity.Size = new System.Drawing.Size(127, 20);
-            this.inptCapitalCity.TabIndex = 8;
-            // 
-            // inptArea
-            // 
-            this.inptArea.Location = new System.Drawing.Point(101, 123);
-            this.inptArea.Name = "inptArea";
-            this.inptArea.Size = new System.Drawing.Size(139, 20);
-            this.inptArea.TabIndex = 9;
-            // 
-            // ChooseContinent
-            // 
-            this.ChooseContinent.Location = new System.Drawing.Point(115, 151);
-            this.ChooseContinent.Name = "ChooseContinent";
-            this.ChooseContinent.Size = new System.Drawing.Size(125, 20);
-            this.ChooseContinent.TabIndex = 10;
-            // 
-            // inptCode
-            // 
-            this.inptCode.Location = new System.Drawing.Point(86, 18);
-            this.inptCode.Name = "inptCode";
-            this.inptCode.Size = new System.Drawing.Size(154, 20);
-            this.inptCode.TabIndex = 11;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(72, 201);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 30);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Spremi";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.comboBoxChoose.FormattingEnabled = true;
+            this.comboBoxChoose.Location = new System.Drawing.Point(113, 151);
+            this.comboBoxChoose.Name = "comboBoxChoose";
+            this.comboBoxChoose.Size = new System.Drawing.Size(139, 21);
+            this.comboBoxChoose.TabIndex = 13;
+            this.comboBoxChoose.SelectedIndexChanged += new System.EventHandler(this.comboBoxChoose_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -400,7 +402,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox ChooseContinent;
         private System.Windows.Forms.TextBox inptArea;
         private System.Windows.Forms.TextBox inptCapitalCity;
         private System.Windows.Forms.TextBox inptNumbPopulation;
@@ -412,6 +413,7 @@
         private System.Windows.Forms.Label lblinptName;
         private System.Windows.Forms.Label lblinptCode;
         private System.Windows.Forms.TextBox inptCode;
+        private System.Windows.Forms.ComboBox comboBoxChoose;
     }
 }
 
